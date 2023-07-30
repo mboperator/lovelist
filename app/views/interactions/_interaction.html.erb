@@ -2,15 +2,14 @@
  <p>
     <h1><%= interaction.name %></h1>
     <i><%= interaction.occured_at %></i>
-  </p>
+
 
   <p>
+    <strong>Participants:</strong>
     <% interaction.friends.each do |friend| %>
-        <%= friend.full_name %>
+        <li><%= friend.full_name %></li>
     <% end %>
-  </p>
 
-  <p>
     <%= markdown(interaction.notes) %>
   </p>
 
