@@ -1,17 +1,17 @@
 <div id="<%= dom_id interaction %>">
-  <p>
-    <strong>Occured at:</strong>
-    <%= interaction.occured_at %>
+ <p>
+    <h1><%= interaction.name %></h1>
+    <i><%= interaction.occured_at %></i>
   </p>
 
   <p>
-    <strong>Notes:</strong>
-    <%= interaction.notes %>
+    <% interaction.friends.each do |friend| %>
+        <%= friend.full_name %>
+    <% end %>
   </p>
 
   <p>
-    <strong>Name:</strong>
-    <%= interaction.name %>
+    <%= markdown(interaction.notes) %>
   </p>
 
 </div>
