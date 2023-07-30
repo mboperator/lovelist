@@ -1,7 +1,15 @@
 <div id="<%= dom_id interaction %>">
   <p>
-    <strong>Occured at:</strong>
-    <%= interaction.occured_at %>
+    <strong>Name:</strong>
+    <%= interaction.name %>
+  </p>
+
+
+  <p>
+    <strong>Participants:</strong>
+    <% interaction.friends.each do |friend| %>
+        <li><%= friend.full_name %></li>
+    <% end %>
   </p>
 
   <p>
@@ -10,8 +18,8 @@
   </p>
 
   <p>
-    <strong>Name:</strong>
-    <%= interaction.name %>
+    <strong>Occured at:</strong>
+    <%= interaction.occured_at %>
   </p>
 
 </div>
