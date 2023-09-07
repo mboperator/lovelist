@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :prayer_requests
   resources :friend_interactions
   resources :interactions
   resources :friends

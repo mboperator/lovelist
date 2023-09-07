@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_30_030239) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_07_163746) do
   create_table "friend_interactions", force: :cascade do |t|
     t.integer "friend_id", null: false
     t.integer "interaction_id", null: false
@@ -36,6 +36,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_30_030239) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "prayer_requests", force: :cascade do |t|
+    t.string "request"
+    t.integer "friend_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friend_id"], name: "index_prayer_requests_on_friend_id"
+  end
+
   add_foreign_key "friend_interactions", "friends"
   add_foreign_key "friend_interactions", "interactions"
+  add_foreign_key "prayer_requests", "friends"
 end

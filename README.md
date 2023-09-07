@@ -18,6 +18,11 @@
   - has_many :friend
 - notes
 
+### Prayer Request
+- request
+- requester
+  - has_one :friend
+
 # README
 
 This README would normally document whatever steps are necessary to get the
